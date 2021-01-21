@@ -14,7 +14,7 @@
 		321A098425B4537600E78E67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321A098225B4537600E78E67 /* LaunchScreen.storyboard */; };
 		321A098725B4537600E78E67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A098625B4537600E78E67 /* main.m */; };
 		321A09A925B4561F00E78E67 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A099425B4561E00E78E67 /* FirstViewController.m */; };
-		321A09AA25B4561F00E78E67 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A099725B4561E00E78E67 /* SecondViewController.m */; };
+		321A09AA25B4561F00E78E67 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A099725B4561E00E78E67 /* SearchViewController.m */; };
 		321A09AB25B4561F00E78E67 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A099A25B4561E00E78E67 /* City.m */; };
 		321A09AC25B4561F00E78E67 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A099E25B4561E00E78E67 /* Airport.m */; };
 		321A09AD25B4561F00E78E67 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A09A025B4561E00E78E67 /* Country.m */; };
@@ -22,6 +22,7 @@
 		321A09AF25B4561F00E78E67 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 321A09A425B4561E00E78E67 /* cities.json */; };
 		321A09B025B4561F00E78E67 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = 321A09A525B4561E00E78E67 /* airports.json */; };
 		321A09B125B4561F00E78E67 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A09A825B4561F00E78E67 /* DataManager.m */; };
+		325ACF4425B9EE0A00B9D2F8 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325ACF4325B9EE0A00B9D2F8 /* PlaceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +39,8 @@
 		321A098625B4537600E78E67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		321A099325B4561E00E78E67 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		321A099425B4561E00E78E67 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		321A099625B4561E00E78E67 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		321A099725B4561E00E78E67 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		321A099625B4561E00E78E67 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		321A099725B4561E00E78E67 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		321A099A25B4561E00E78E67 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		321A099B25B4561E00E78E67 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
 		321A099D25B4561E00E78E67 /* Airport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Airport.h; sourceTree = "<group>"; };
@@ -51,6 +52,8 @@
 		321A09A525B4561E00E78E67 /* airports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports.json; sourceTree = "<group>"; };
 		321A09A725B4561F00E78E67 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		321A09A825B4561F00E78E67 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		325ACF4225B9EE0A00B9D2F8 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
+		325ACF4325B9EE0A00B9D2F8 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				321A099225B4561E00E78E67 /* MainViewController */,
-				321A099525B4561E00E78E67 /* SecondViewController */,
+				321A099525B4561E00E78E67 /* SearchViewController */,
+				325ACF4625B9EE1200B9D2F8 /* PlaceViewController */,
 				321A099825B4561E00E78E67 /* Model */,
 				321A09A625B4561F00E78E67 /* DataManager */,
 				321A09A225B4561E00E78E67 /* JSONFiles */,
@@ -111,13 +115,13 @@
 			path = MainViewController;
 			sourceTree = "<group>";
 		};
-		321A099525B4561E00E78E67 /* SecondViewController */ = {
+		321A099525B4561E00E78E67 /* SearchViewController */ = {
 			isa = PBXGroup;
 			children = (
-				321A099625B4561E00E78E67 /* SecondViewController.h */,
-				321A099725B4561E00E78E67 /* SecondViewController.m */,
+				321A099625B4561E00E78E67 /* SearchViewController.h */,
+				321A099725B4561E00E78E67 /* SearchViewController.m */,
 			);
-			path = SecondViewController;
+			path = SearchViewController;
 			sourceTree = "<group>";
 		};
 		321A099825B4561E00E78E67 /* Model */ = {
@@ -174,6 +178,15 @@
 				321A09A825B4561F00E78E67 /* DataManager.m */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		325ACF4625B9EE1200B9D2F8 /* PlaceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				325ACF4225B9EE0A00B9D2F8 /* PlaceViewController.h */,
+				325ACF4325B9EE0A00B9D2F8 /* PlaceViewController.m */,
+			);
+			path = PlaceViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,8 +260,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				321A09AA25B4561F00E78E67 /* SecondViewController.m in Sources */,
+				321A09AA25B4561F00E78E67 /* SearchViewController.m in Sources */,
 				321A09B125B4561F00E78E67 /* DataManager.m in Sources */,
+				325ACF4425B9EE0A00B9D2F8 /* PlaceViewController.m in Sources */,
 				321A097C25B4537400E78E67 /* ViewController.m in Sources */,
 				321A097625B4537400E78E67 /* AppDelegate.m in Sources */,
 				321A09A925B4561F00E78E67 /* FirstViewController.m in Sources */,

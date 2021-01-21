@@ -5,10 +5,11 @@
 //  Created by Федор Филимонов on 17.01.2021.
 //
 
-#import "SecondViewController.h"
+#import "SearchViewController.h"
 #import "DataManager.h"
+#import "PlaceViewController.h"
 
-@interface SecondViewController ()
+@interface SearchViewController () <PlaceViewControllerDelegate>
 @property (nonatomic, strong) UITextField *departureCityTextField;
 @property (nonatomic, strong) UITextField *arrivalCityTextField;
 @property (nonatomic, strong) UISegmentedControl *classControl;
@@ -16,9 +17,13 @@
 @property (nonatomic, strong) UILabel *completeLoadDataLabel;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) UIProgressView *progressIndicator;
+@property (nonatomic, strong) UIButton *departureSearchButton;
+@property (nonatomic, strong) UIButton *arrivalSearchButton;
+@property (nonatomic) SearchRequest searchRequest;
+
 @end
 
-@implementation SecondViewController
+@implementation SearchViewController
 
 //MARK: - ViewController Lifecycle
 - (void) viewDidLoad {
@@ -29,10 +34,11 @@
     [self configureLoadDataButton];
     [self configureCompleteLoadDataLabel];
     [self addObserverInNotificationCenter];
+    [self configureDepartureCitySearchButton];
+    [self configureArrivalCitySearchButton];
 }
 
-- (void) dealloc
-{
+- (void) dealloc {
     [self removeObserverFromNotificationCenter];
 }
 
@@ -42,7 +48,7 @@
 }
 
 -(void) configureFromCityTextField {
-    self.departureCityTextField = [[UITextField alloc] initWithFrame: CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0, 250, 300, 40)];
+    self.departureCityTextField = [[UITextField alloc] initWithFrame: CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0, 250, 250, 40)];
     self.departureCityTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.departureCityTextField.placeholder = @"From";
     self.departureCityTextField.font = [UIFont systemFontOfSize:17 weight:UIFontWeightRegular];
@@ -50,11 +56,42 @@
 }
 
 -(void) configureToCityTextField {
-    self.arrivalCityTextField = [[UITextField alloc] initWithFrame: CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0, 310, 300, 40)];
+    self.arrivalCityTextField = [[UITextField alloc] initWithFrame: CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0, 310, 250, 40)];
     self.arrivalCityTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.arrivalCityTextField.placeholder = @"To";
     self.arrivalCityTextField.font = [UIFont systemFontOfSize:17 weight:UIFontWeightRegular];
     [self.view addSubview:self.arrivalCityTextField];
+}
+
+- (void) configureDepartureCitySearchButton {
+    self.departureSearchButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.departureSearchButton setImage:[UIImage systemImageNamed:@"magnifyingglass"] forState:UIControlStateNormal];
+    self.departureSearchButton.backgroundColor = [UIColor colorWithRed:120.0/255.0 green:80.0/255.0 blue:155.0/255.0 alpha:1.0];
+    self.departureSearchButton.tintColor = [UIColor whiteColor];
+    self.departureSearchButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0 + 260, 250, 40, 40);
+    [self.departureSearchButton addTarget:self action:@selector(pushFindDepartureOrArrivalPlaceButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.departureSearchButton];
+}
+
+- (void) configureArrivalCitySearchButton {
+    self.arrivalSearchButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.arrivalSearchButton setImage:[UIImage systemImageNamed:@"magnifyingglass"] forState:UIControlStateNormal];
+    self.arrivalSearchButton.backgroundColor = [UIColor colorWithRed:120.0/255.0 green:80.0/255.0 blue:155.0/255.0 alpha:1.0];
+    self.arrivalSearchButton.tintColor = [UIColor whiteColor];
+    self.arrivalSearchButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0 + 260, 310, 40, 40);
+    [self.arrivalSearchButton addTarget:self action:@selector(pushFindDepartureOrArrivalPlaceButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.arrivalSearchButton];
+}
+
+- (void) pushFindDepartureOrArrivalPlaceButton: (UIButton *)sender {
+    PlaceViewController *placeViewController;
+    if ([sender isEqual: self.departureSearchButton]) {
+        placeViewController = [[PlaceViewController alloc] initWithType: PlaceTypeDeparture];
+    } else {
+        placeViewController = [[PlaceViewController alloc] initWithType: PlaceTypeArrival];
+    }
+    placeViewController.delegate = self;
+    [self.navigationController showViewController:placeViewController sender:self];
 }
 
 - (void) configureLoadDataButton {
@@ -101,6 +138,33 @@
 
 - (void) removeObserverFromNotificationCenter {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kDataManagerLoadDataDidComplete object:nil];
+}
+
+- (void)selectPlace:(nonnull id)place withType:(PlaceType)placeType andDataType:(DataSourceType)dataType {
+    [self setPlace:place withDataType:dataType andPlaceType:placeType forTextField: (placeType == PlaceTypeDeparture) ? self.departureCityTextField : self.arrivalCityTextField];
+}
+
+- (void)setPlace:(id)place withDataType:(DataSourceType)dataType andPlaceType:(PlaceType)placeType forTextField:(UITextField *)textField {
+    NSString *title;
+    NSString *iata;
+    
+    if (dataType == DataSourceTypeCity) {
+        City *city = (City *)place;
+        title = city.name;
+        iata = city.code;
+    } else if (dataType == DataSourceTypeAirport) {
+        Airport *airport = (Airport *)place;
+        title = airport.name;
+        iata = airport.cityCode;
+    }
+    
+    if (placeType == PlaceTypeDeparture) {
+        _searchRequest.origin = iata;
+        self.departureCityTextField.text = title;
+    } else {
+        _searchRequest.destination = iata;
+        self.arrivalCityTextField.text = title;
+    }
 }
 
 @end
