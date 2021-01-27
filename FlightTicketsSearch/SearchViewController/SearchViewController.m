@@ -8,6 +8,7 @@
 #import "SearchViewController.h"
 #import "DataManager.h"
 #import "PlaceViewController.h"
+#import "MapViewController.h"
 
 @interface SearchViewController () <PlaceViewControllerDelegate>
 @property (nonatomic, strong) UITextField *departureCityTextField;
@@ -18,7 +19,9 @@
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) UIProgressView *progressIndicator;
 @property (nonatomic, strong) UIButton *departureSearchButton;
+@property (nonatomic, strong) UIButton *departureMapButton;
 @property (nonatomic, strong) UIButton *arrivalSearchButton;
+@property (nonatomic, strong) UIButton *arrivalMapButton;
 @property (nonatomic) SearchRequest searchRequest;
 
 @end
@@ -35,7 +38,9 @@
     [self configureCompleteLoadDataLabel];
     [self addObserverInNotificationCenter];
     [self configureDepartureCitySearchButton];
+    [self configureDepartureCityMapButton];
     [self configureArrivalCitySearchButton];
+    [self configureArrivalCityMapButton];
 }
 
 - (void) dealloc {
@@ -48,7 +53,7 @@
 }
 
 -(void) configureFromCityTextField {
-    self.departureCityTextField = [[UITextField alloc] initWithFrame: CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0, 250, 250, 40)];
+    self.departureCityTextField = [[UITextField alloc] initWithFrame: CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0, 250, 200, 40)];
     self.departureCityTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.departureCityTextField.placeholder = @"From";
     self.departureCityTextField.font = [UIFont systemFontOfSize:17 weight:UIFontWeightRegular];
@@ -56,7 +61,7 @@
 }
 
 -(void) configureToCityTextField {
-    self.arrivalCityTextField = [[UITextField alloc] initWithFrame: CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0, 310, 250, 40)];
+    self.arrivalCityTextField = [[UITextField alloc] initWithFrame: CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0, 310, 200, 40)];
     self.arrivalCityTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.arrivalCityTextField.placeholder = @"To";
     self.arrivalCityTextField.font = [UIFont systemFontOfSize:17 weight:UIFontWeightRegular];
@@ -68,9 +73,19 @@
     [self.departureSearchButton setImage:[UIImage systemImageNamed:@"magnifyingglass"] forState:UIControlStateNormal];
     self.departureSearchButton.backgroundColor = [UIColor colorWithRed:120.0/255.0 green:80.0/255.0 blue:155.0/255.0 alpha:1.0];
     self.departureSearchButton.tintColor = [UIColor whiteColor];
-    self.departureSearchButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0 + 260, 250, 40, 40);
+    self.departureSearchButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 400) / 2.0 + 260, 250, 40, 40);
     [self.departureSearchButton addTarget:self action:@selector(pushFindDepartureOrArrivalPlaceButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.departureSearchButton];
+}
+
+- (void) configureDepartureCityMapButton {
+    self.departureMapButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.departureMapButton setImage:[UIImage systemImageNamed:@"map"] forState:UIControlStateNormal];
+    self.departureMapButton.backgroundColor = [UIColor colorWithRed:120.0/255.0 green:80.0/255.0 blue:155.0/255.0 alpha:1.0];
+    self.departureMapButton.tintColor = [UIColor whiteColor];
+    self.departureMapButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0 + 260, 250, 40, 40);
+    [self.departureMapButton addTarget:self action:@selector(pushMap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.departureMapButton];
 }
 
 - (void) configureArrivalCitySearchButton {
@@ -78,9 +93,19 @@
     [self.arrivalSearchButton setImage:[UIImage systemImageNamed:@"magnifyingglass"] forState:UIControlStateNormal];
     self.arrivalSearchButton.backgroundColor = [UIColor colorWithRed:120.0/255.0 green:80.0/255.0 blue:155.0/255.0 alpha:1.0];
     self.arrivalSearchButton.tintColor = [UIColor whiteColor];
-    self.arrivalSearchButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0 + 260, 310, 40, 40);
+    self.arrivalSearchButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 400) / 2.0 + 260, 310, 40, 40);
     [self.arrivalSearchButton addTarget:self action:@selector(pushFindDepartureOrArrivalPlaceButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.arrivalSearchButton];
+}
+
+- (void) configureArrivalCityMapButton {
+    self.arrivalMapButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.arrivalMapButton setImage:[UIImage systemImageNamed:@"map"] forState:UIControlStateNormal];
+    self.arrivalMapButton.backgroundColor = [UIColor colorWithRed:120.0/255.0 green:80.0/255.0 blue:155.0/255.0 alpha:1.0];
+    self.arrivalMapButton.tintColor = [UIColor whiteColor];
+    self.arrivalMapButton.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - 300) / 2.0 + 260, 310, 40, 40);
+    [self.arrivalMapButton addTarget:self action:@selector(pushMap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.arrivalMapButton];
 }
 
 - (void) pushFindDepartureOrArrivalPlaceButton: (UIButton *)sender {
@@ -92,6 +117,11 @@
     }
     placeViewController.delegate = self;
     [self.navigationController showViewController:placeViewController sender:self];
+}
+
+- (void) pushMap: (UIButton *)sender {
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    [self.navigationController showViewController:mapViewController sender:self];
 }
 
 - (void) configureLoadDataButton {
