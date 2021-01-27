@@ -6,11 +6,13 @@
 //
 
 #import "FirstViewController.h"
-#import "SecondViewController.h"
+#import "SearchViewController.h"
+#import "DataManager.h"
 
 @interface FirstViewController ()
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) UIButton *nextControllerButton;
+
 @end
 
 @implementation FirstViewController
@@ -21,6 +23,7 @@
     [self configure];
     [self configureLogo];
     [self configureNextControllerButton];
+    [[DataManager sharedInstance] loadData];
 }
 
 - (void) configure {
@@ -51,7 +54,7 @@
 }
 
 - (void) openSecondViewController {
-    SecondViewController *secondViewController = [[SecondViewController alloc] init];
+    SearchViewController *secondViewController = [[SearchViewController alloc] init];
     [self.navigationController showViewController:secondViewController sender:self];
 }
 
