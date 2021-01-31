@@ -5,17 +5,17 @@
 //  Created by Федор Филимонов on 17.01.2021.
 //
 
-#import "FirstViewController.h"
+#import "MainViewController.h"
 #import "SearchViewController.h"
 #import "DataManager.h"
 
-@interface FirstViewController ()
+@interface MainViewController ()
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) UIButton *nextControllerButton;
 
 @end
 
-@implementation FirstViewController
+@implementation MainViewController
 
 //MARK: - ViewController Lifecycle
 - (void) viewDidLoad {
