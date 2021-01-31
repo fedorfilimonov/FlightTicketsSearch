@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3207F69C25C18AC3004F3FB8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207F69B25C18AC3004F3FB8 /* MapViewController.m */; };
+		3207F6A125C18B00004F3FB8 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207F69F25C18B00004F3FB8 /* LocationManager.m */; };
 		321A097625B4537400E78E67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A097525B4537400E78E67 /* AppDelegate.m */; };
 		321A097925B4537400E78E67 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A097825B4537400E78E67 /* SceneDelegate.m */; };
 		321A097C25B4537400E78E67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A097B25B4537400E78E67 /* ViewController.m */; };
@@ -26,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3207F69A25C18AC3004F3FB8 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		3207F69B25C18AC3004F3FB8 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		3207F69F25C18B00004F3FB8 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		3207F6A025C18B00004F3FB8 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		321A097125B4537400E78E67 /* FlightTicketsSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightTicketsSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		321A097425B4537400E78E67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		321A097525B4537400E78E67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3207F69925C18AA0004F3FB8 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3207F69A25C18AC3004F3FB8 /* MapViewController.h */,
+				3207F69B25C18AC3004F3FB8 /* MapViewController.m */,
+			);
+			path = MapViewController;
+			sourceTree = "<group>";
+		};
 		321A096825B4537400E78E67 = {
 			isa = PBXGroup;
 			children = (
@@ -89,8 +104,9 @@
 				321A099225B4561E00E78E67 /* MainViewController */,
 				321A099525B4561E00E78E67 /* SearchViewController */,
 				325ACF4625B9EE1200B9D2F8 /* PlaceViewController */,
+				3207F69925C18AA0004F3FB8 /* MapViewController */,
 				321A099825B4561E00E78E67 /* Model */,
-				321A09A625B4561F00E78E67 /* DataManager */,
+				321A09A625B4561F00E78E67 /* Managers */,
 				321A09A225B4561E00E78E67 /* JSONFiles */,
 				321A097425B4537400E78E67 /* AppDelegate.h */,
 				321A097525B4537400E78E67 /* AppDelegate.m */,
@@ -171,13 +187,15 @@
 			path = JSONFiles;
 			sourceTree = "<group>";
 		};
-		321A09A625B4561F00E78E67 /* DataManager */ = {
+		321A09A625B4561F00E78E67 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				321A09A725B4561F00E78E67 /* DataManager.h */,
 				321A09A825B4561F00E78E67 /* DataManager.m */,
+				3207F6A025C18B00004F3FB8 /* LocationManager.h */,
+				3207F69F25C18B00004F3FB8 /* LocationManager.m */,
 			);
-			path = DataManager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		325ACF4625B9EE1200B9D2F8 /* PlaceViewController */ = {
@@ -263,9 +281,11 @@
 				321A09AA25B4561F00E78E67 /* SearchViewController.m in Sources */,
 				321A09B125B4561F00E78E67 /* DataManager.m in Sources */,
 				325ACF4425B9EE0A00B9D2F8 /* PlaceViewController.m in Sources */,
+				3207F69C25C18AC3004F3FB8 /* MapViewController.m in Sources */,
 				321A097C25B4537400E78E67 /* ViewController.m in Sources */,
 				321A097625B4537400E78E67 /* AppDelegate.m in Sources */,
 				321A09A925B4561F00E78E67 /* FirstViewController.m in Sources */,
+				3207F6A125C18B00004F3FB8 /* LocationManager.m in Sources */,
 				321A098725B4537600E78E67 /* main.m in Sources */,
 				321A09AC25B4561F00E78E67 /* Airport.m in Sources */,
 				321A09AB25B4561F00E78E67 /* City.m in Sources */,
