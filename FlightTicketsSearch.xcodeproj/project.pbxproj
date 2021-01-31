@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3207F69C25C18AC3004F3FB8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207F69B25C18AC3004F3FB8 /* MapViewController.m */; };
+		3207F6A125C18B00004F3FB8 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207F69F25C18B00004F3FB8 /* LocationManager.m */; };
 		321A097625B4537400E78E67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A097525B4537400E78E67 /* AppDelegate.m */; };
 		321A097925B4537400E78E67 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A097825B4537400E78E67 /* SceneDelegate.m */; };
 		321A097C25B4537400E78E67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A097B25B4537400E78E67 /* ViewController.m */; };
 		321A098125B4537600E78E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321A098025B4537600E78E67 /* Assets.xcassets */; };
 		321A098425B4537600E78E67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321A098225B4537600E78E67 /* LaunchScreen.storyboard */; };
 		321A098725B4537600E78E67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A098625B4537600E78E67 /* main.m */; };
-		321A09A925B4561F00E78E67 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A099425B4561E00E78E67 /* FirstViewController.m */; };
+		321A09A925B4561F00E78E67 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A099425B4561E00E78E67 /* MainViewController.m */; };
 		321A09AA25B4561F00E78E67 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A099725B4561E00E78E67 /* SearchViewController.m */; };
 		321A09AB25B4561F00E78E67 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A099A25B4561E00E78E67 /* City.m */; };
 		321A09AC25B4561F00E78E67 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A099E25B4561E00E78E67 /* Airport.m */; };
@@ -23,9 +25,14 @@
 		321A09B025B4561F00E78E67 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = 321A09A525B4561E00E78E67 /* airports.json */; };
 		321A09B125B4561F00E78E67 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 321A09A825B4561F00E78E67 /* DataManager.m */; };
 		325ACF4425B9EE0A00B9D2F8 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325ACF4325B9EE0A00B9D2F8 /* PlaceViewController.m */; };
+		32DED58E25C6AA4D0035044B /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DED58C25C6AA4D0035044B /* TabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3207F69A25C18AC3004F3FB8 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		3207F69B25C18AC3004F3FB8 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		3207F69F25C18B00004F3FB8 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		3207F6A025C18B00004F3FB8 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		321A097125B4537400E78E67 /* FlightTicketsSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightTicketsSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		321A097425B4537400E78E67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		321A097525B4537400E78E67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -37,8 +44,8 @@
 		321A098325B4537600E78E67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		321A098525B4537600E78E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		321A098625B4537600E78E67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		321A099325B4561E00E78E67 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		321A099425B4561E00E78E67 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		321A099325B4561E00E78E67 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		321A099425B4561E00E78E67 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		321A099625B4561E00E78E67 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		321A099725B4561E00E78E67 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		321A099A25B4561E00E78E67 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
@@ -54,6 +61,8 @@
 		321A09A825B4561F00E78E67 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		325ACF4225B9EE0A00B9D2F8 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		325ACF4325B9EE0A00B9D2F8 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
+		32DED58C25C6AA4D0035044B /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		32DED58D25C6AA4D0035044B /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3207F69925C18AA0004F3FB8 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3207F69A25C18AC3004F3FB8 /* MapViewController.h */,
+				3207F69B25C18AC3004F3FB8 /* MapViewController.m */,
+			);
+			path = MapViewController;
+			sourceTree = "<group>";
+		};
 		321A096825B4537400E78E67 = {
 			isa = PBXGroup;
 			children = (
@@ -86,12 +104,14 @@
 		321A097325B4537400E78E67 /* FlightTicketsSearch */ = {
 			isa = PBXGroup;
 			children = (
-				321A099225B4561E00E78E67 /* MainViewController */,
+				321A099225B4561E00E78E67 /* FirstViewController */,
 				321A099525B4561E00E78E67 /* SearchViewController */,
 				325ACF4625B9EE1200B9D2F8 /* PlaceViewController */,
+				3207F69925C18AA0004F3FB8 /* MapViewController */,
 				321A099825B4561E00E78E67 /* Model */,
-				321A09A625B4561F00E78E67 /* DataManager */,
+				321A09A625B4561F00E78E67 /* Managers */,
 				321A09A225B4561E00E78E67 /* JSONFiles */,
+				32DED58B25C6AA4D0035044B /* TabBarController */,
 				321A097425B4537400E78E67 /* AppDelegate.h */,
 				321A097525B4537400E78E67 /* AppDelegate.m */,
 				321A097725B4537400E78E67 /* SceneDelegate.h */,
@@ -106,13 +126,13 @@
 			path = FlightTicketsSearch;
 			sourceTree = "<group>";
 		};
-		321A099225B4561E00E78E67 /* MainViewController */ = {
+		321A099225B4561E00E78E67 /* FirstViewController */ = {
 			isa = PBXGroup;
 			children = (
-				321A099325B4561E00E78E67 /* FirstViewController.h */,
-				321A099425B4561E00E78E67 /* FirstViewController.m */,
+				321A099325B4561E00E78E67 /* MainViewController.h */,
+				321A099425B4561E00E78E67 /* MainViewController.m */,
 			);
-			path = MainViewController;
+			path = FirstViewController;
 			sourceTree = "<group>";
 		};
 		321A099525B4561E00E78E67 /* SearchViewController */ = {
@@ -171,13 +191,15 @@
 			path = JSONFiles;
 			sourceTree = "<group>";
 		};
-		321A09A625B4561F00E78E67 /* DataManager */ = {
+		321A09A625B4561F00E78E67 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				321A09A725B4561F00E78E67 /* DataManager.h */,
 				321A09A825B4561F00E78E67 /* DataManager.m */,
+				3207F6A025C18B00004F3FB8 /* LocationManager.h */,
+				3207F69F25C18B00004F3FB8 /* LocationManager.m */,
 			);
-			path = DataManager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		325ACF4625B9EE1200B9D2F8 /* PlaceViewController */ = {
@@ -187,6 +209,15 @@
 				325ACF4325B9EE0A00B9D2F8 /* PlaceViewController.m */,
 			);
 			path = PlaceViewController;
+			sourceTree = "<group>";
+		};
+		32DED58B25C6AA4D0035044B /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				32DED58C25C6AA4D0035044B /* TabBarController.m */,
+				32DED58D25C6AA4D0035044B /* TabBarController.h */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +294,12 @@
 				321A09AA25B4561F00E78E67 /* SearchViewController.m in Sources */,
 				321A09B125B4561F00E78E67 /* DataManager.m in Sources */,
 				325ACF4425B9EE0A00B9D2F8 /* PlaceViewController.m in Sources */,
+				3207F69C25C18AC3004F3FB8 /* MapViewController.m in Sources */,
 				321A097C25B4537400E78E67 /* ViewController.m in Sources */,
 				321A097625B4537400E78E67 /* AppDelegate.m in Sources */,
-				321A09A925B4561F00E78E67 /* FirstViewController.m in Sources */,
+				321A09A925B4561F00E78E67 /* MainViewController.m in Sources */,
+				32DED58E25C6AA4D0035044B /* TabBarController.m in Sources */,
+				3207F6A125C18B00004F3FB8 /* LocationManager.m in Sources */,
 				321A098725B4537600E78E67 /* main.m in Sources */,
 				321A09AC25B4561F00E78E67 /* Airport.m in Sources */,
 				321A09AB25B4561F00E78E67 /* City.m in Sources */,
